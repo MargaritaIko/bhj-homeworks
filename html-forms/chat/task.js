@@ -16,7 +16,7 @@ const boxOfAnswers = ['Здравствуйте!',
                     ];
 
 ChatWidget.onclick = () => ChatWidget.classList.add('chat-widget_active');                    
-addZero = (digit) => (digit < 11) ? '0' + digit : digit;
+addZero = (digit) => (digit < 10) ? '0' + digit : digit;
 
 function answerSelector(arr,idx) {
     let timeStamp = new Date();
@@ -33,10 +33,10 @@ function answerSelector(arr,idx) {
 }
 function autoAnswer() {
     let newMessage = messages.lastElementChild;
-    let idx = Math.floor(Math.random() * 11);
+    let idx = Math.floor(Math.random() * boxOfAnswers.length);
     let timeStamp = new Date();
     if (newMessage.classList.contains('message_client')) {
-        (timeStamp.getHours() > 18 || timeStamp.getHours() < 9) ? answerSelector(boxOfAnswers, 11) : answerSelector(boxOfAnswers, idx);           
+        (timeStamp.getHours() > 18 || timeStamp.getHours() < 10) ? answerSelector(boxOfAnswers, 10) : answerSelector(boxOfAnswers, idx);           
     }
 }
 
