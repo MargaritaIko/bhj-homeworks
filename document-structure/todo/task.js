@@ -20,13 +20,6 @@ inputTaskField.addEventListener('keyup', (ev) => {
         addTask;
     }
 })
-addTaskOption.addEventListener('click', (ev) => {
-    ev.preventDefault();
-    addTask();
-})
-
-taskList.addEventListener('click', (ev) => {
-    ev.preventDefault();
     const removeTaskOption = document.querySelectorAll('.task__remove');
     removeTaskOption.forEach(element => {
         if (element === ev.target) {
