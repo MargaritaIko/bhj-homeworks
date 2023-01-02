@@ -1,11 +1,13 @@
-let editor = document.getElementById("editor");
-let reset = document.getElementById("resetBtn");
-let text = localStorage.getItem("textEditor");
+const editor = document.getElementById("editor");
+const reset = document.getElementById("resetBtn");
+const text = localStorage.getItem("textEditor");
 
 window.addEventListener("load", function() {
   editor.value = text;
 });
 
-window.addEventListener("beforeunload", function() {
-  localStorage.setItem("textEditor", editor.value);
+window.addEventListener('input', (e) => localStorage.setItem('text', e.target.value));
+clearEditor.addEventListener('click', () => {
+  editor.value = '';
+  localStorage.text = '';
 });
