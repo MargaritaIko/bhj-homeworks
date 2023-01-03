@@ -1,13 +1,11 @@
 const signin = document.querySelector("#signin");
 const signInForm = document.querySelector("#signin__form");
-const signOutButton = document.querySelector("#signout__btn");
 const welcome = document.querySelector(".welcome");
 const userId = document.querySelector("#user_id");
 
 function authorize(id) {
   signin.classList.remove("signin_active");
   welcome.classList.add("welcome_active");
-  signOutButton.style.display = "block";
   userId.textContent = id;
 }
 
@@ -38,9 +36,4 @@ signInForm.addEventListener("submit", (e) => {
   e.target.reset();
 });
 
-signOutButton.addEventListener("click", ()=> {
-  signin.classList.add("signin_active");
-  welcome.classList.remove("welcome_active");
-  localStorage.removeItem("user_id");
-})
- 
+
